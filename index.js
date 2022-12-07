@@ -5,14 +5,6 @@ const updateResource = (resource) => {
 const plugin = 'AntdMomentWebpackPlugin';
 class Plugin {
   apply(compiler) {
-    const { alias } = compiler.options.resolve;
-    if (alias) {
-      alias.dayjs = 'moment';
-    } else {
-      compiler.options.resolve.alias = {
-        dayjs: 'moment',
-      };
-    }
     compiler.hooks.normalModuleFactory.tap(plugin, (factory) => {
       factory.hooks.beforeResolve.tap(plugin, (result) => {
         if (generateRegExp.test(result.request)) {
