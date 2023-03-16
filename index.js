@@ -4,7 +4,7 @@ const updateResource = (resource) => {
 };
 const plugin = 'AntdMomentWebpackPlugin';
 class Plugin {
-  constructor (options) {
+  constructor(options) {
     this.options = options || {};
   }
   apply(compiler) {
@@ -26,9 +26,9 @@ class Plugin {
         }
       });
       factory.hooks.afterResolve.tap(plugin, (result) => {
-        const createData = result.createData;
-        if (generateRegExp.test(createData.resource)) {
-          updateResource(result);
+        const data = result.createData ? result.createData : result;
+        if (generateRegExp.test(data.resource)) {
+          data.resource = data.resource.replace('dayjs', 'moment')
         }
       });
     });
