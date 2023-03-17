@@ -1,6 +1,6 @@
 # antd-moment-webpack-plugin
 
-A webpack plugin to replace [Day.js](https://day.js.org/) to [Moment.js](http://momentjs.com/) automatically.
+A webpack plugin to replace [Day.js](https://day.js.org/) to [Moment.js](http://momentjs.com/) automatically. compatible with webpack4 and webpack 5.
 
 
 ## Installation
