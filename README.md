@@ -8,7 +8,7 @@ A webpack plugin to replace [Day.js](https://day.js.org/) to [Moment.js](http://
 npm install --save-dev @ant-design/moment-webpack-plugin
 ```
 
-## Usage
+## Default Usage
 ```js
 // webpack-config.js
 import AntdMomentWebpackPlugin from '@ant-design/moment-webpack-plugin';
@@ -16,5 +16,19 @@ import AntdMomentWebpackPlugin from '@ant-design/moment-webpack-plugin';
 module.exports = {
   // ...
   plugins: [new AntdMomentWebpackPlugin()],
+};
+```
+
+## disableDayjsAlias
+`disableDayjsAlias` option to allow dayjs not alias to `moment` outside antd
+```js
+// webpack-config.js
+import AntdMomentWebpackPlugin from '@ant-design/moment-webpack-plugin';
+
+module.exports = {
+  // ...
+  plugins: [new AntdMomentWebpackPlugin({
+    disableDayjsAlias: true
+  })],
 };
 ```
