@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "",
   "main": "index.js",
+  "typings": "./index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ant-design/antd-moment-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/ant-design/antd-moment-webpack-plugin#readme"
+  "homepage": "https://github.com/ant-design/antd-moment-webpack-plugin#readme",
+  "devDependencies": {
+    "@types/webpack": "4.41.33"
+  }
 }
