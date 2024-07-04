@@ -1,7 +1,5 @@
 const generateRegExp = /generate\/dayjs/;
-const updateResource = (resource) => {
-  resource.request = resource.request.replace('dayjs', 'moment');
-};
+
 const plugin = 'AntdMomentWebpackPlugin';
 class Plugin {
   constructor(options) {
@@ -11,13 +9,13 @@ class Plugin {
     compiler.hooks.normalModuleFactory.tap(plugin, (factory) => {
       factory.hooks.beforeResolve.tap(plugin, (result) => {
         if (generateRegExp.test(result.request)) {
-          updateResource(result);
+          result.request = result.request.replace('dayjs', 'moment');
         }
       });
       factory.hooks.afterResolve.tap(plugin, (result) => {
-        const createData = result.createData;
-        if (generateRegExp.test(createData.resource)) {
-          updateResource(result);
+        const data = result.createData ? result.createData : result;
+        if (generateRegExp.test(data.resource)) {
+          data.resource = data.resource.replace('dayjs', 'moment')
         }
       });
     });
