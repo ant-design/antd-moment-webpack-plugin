@@ -8,17 +8,6 @@ class Plugin {
     this.options = options || {};
   }
   apply (compiler) {
-    const { disableDayjsAlias = false } = this.options;
-    const { alias } = compiler.options.resolve;
-    if (!disableDayjsAlias) {
-      if (alias) {
-        alias.dayjs = 'moment';
-      } else {
-        compiler.options.resolve.alias = {
-          dayjs: 'moment',
-        };
-      }
-    }
     compiler.hooks.normalModuleFactory.tap(plugin, (factory) => {
       factory.hooks.beforeResolve.tap(plugin, (result) => {
         if (generateRegExp.test(result.request)) {
