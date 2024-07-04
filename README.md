@@ -15,7 +15,7 @@ import AntdMomentWebpackPlugin from '@ant-design/moment-webpack-plugin';
 
 module.exports = {
   // ...
-  plugins: [new AntdMomentWebpackPlugin({ })],
+  plugins: [new AntdMomentWebpackPlugin()],
 };
 ```
 
