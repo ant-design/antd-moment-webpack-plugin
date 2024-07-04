@@ -18,3 +18,9 @@ module.exports = {
   plugins: [new AntdMomentWebpackPlugin()],
 };
 ```
+
+## Options
+|Name|Type|Default|Description|
+|:--:|:--:|:-----:|:----------|
+|**`disableDayjsAlias`**|`{Boolean}`|`false`|Allow dayjs not alias to moment outside antd.|
+

@@ -4,11 +4,11 @@ const updateResource = (resource) => {
 };
 const plugin = 'AntdMomentWebpackPlugin';
 class Plugin {
-  constructor (options) {
+  constructor(options) {
     this.options = options || {};
   }
-  apply(compiler) {
-    const { disableDayjsAlias } = this.options;
+  apply (compiler) {
+    const { disableDayjsAlias = false } = this.options;
     const { alias } = compiler.options.resolve;
     if (!disableDayjsAlias) {
       if (alias) {
